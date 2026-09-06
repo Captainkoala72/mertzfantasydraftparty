@@ -1,0 +1,15 @@
+{
+  "name": "mertz-invitational-draft-party",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One shared, account-free WebRTC draft party.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --watch --env-file-if-exists=.env server.js",
+    "check": "node --check server.js && node --check public/app.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": { "ws": "^8.21.0" }
+}

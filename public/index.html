@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101211">
+  <meta name="description" content="The Mertz Invitational Draft Party. One table. The whole league. Join the live video call.">
+  <title>Mertz Invitational Draft Party</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Mertz Invitational Draft Party"><span class="monogram">M<span>Ⅰ</span></span><span class="brand-words">MERTZ <span>INVITATIONAL</span></span></a>
+    <div class="event-mark"><span class="tiny-line"></span> FANTASY FOOTBALL <span class="tiny-line"></span></div>
+    <div class="connection"><span class="connection-dot" id="connectionDot"></span><span id="connectionText">Connecting</span></div>
+  </header>
+  <main>
+    <section class="party-heading" aria-label="Draft party">
+      <div><div class="eyebrow"><span class="gold-dash"></span> THE LEAGUE IS HERE</div><h1>Draft <em>Party.</em></h1></div>
+      <div class="session-meta"><div class="participant-pill"><span data-icon="users"></span><strong id="participantCount">0</strong><span id="participantLabel">in the party</span></div><span class="session-time" id="sessionTime">00:00</span></div>
+    </section>
+    <div class="notice" id="notice" role="status" hidden><span id="noticeText"></span><button id="noticeAction" hidden>Try again</button></div>
+    <section class="video-grid" id="videoGrid" aria-label="Live participants">
+      <article class="video-card local-card" id="localCard">
+        <video id="localVideo" autoplay muted playsinline aria-label="Your camera"></video>
+        <div class="camera-placeholder" id="localPlaceholder"><div class="avatar">M</div><p id="localMessage">Getting your camera ready</p><span id="localHint">Allow camera & microphone to join</span></div>
+        <span class="card-top-label">YOUR SEAT</span>
+        <div class="video-caption"><div><span class="presence-dot"></span><strong>You</strong><span class="you-label" id="localSubtext">Connecting</span></div><span class="media-badge" id="localMuted" data-icon="micOff" aria-label="Microphone muted"></span></div>
+      </article>
+      <article class="waiting-card" id="waitingCard"><div class="waiting-orbit"><span data-icon="users"></span></div><div><span class="eyebrow">ROOM FOR THE RIVALRY</span><h2>The next pick is company.</h2><p id="waitingMessage">Your league joins right here.<br>Keep this page open and settle in.</p></div><div class="waiting-bottom"><span class="pulse-dot"></span> Waiting for the league</div></article>
+    </section>
+    <div class="below-grid"><span><span class="gold-dash"></span> ONE LEAGUE. ONE CALL.</span><span id="privacyText"><span data-icon="lock"></span> Encrypted in transit · Never recorded by this site</span></div>
+  </main>
+  <footer class="call-dock" aria-label="Call controls">
+    <div class="dock-status"><span class="live-square" data-icon="audio"></span><div><strong id="dockTitle">Joining the party</strong><span id="dockSubtitle">Getting everything ready</span></div></div>
+    <div class="controls">
+      <button class="control" id="micButton" aria-label="Unmute microphone" aria-pressed="false" disabled><span class="control-icon" data-icon="micOff"></span><span class="control-label">Unmute</span></button>
+      <button class="control" id="cameraButton" aria-label="Turn camera on" aria-pressed="false" disabled><span class="control-icon" data-icon="cameraOff"></span><span class="control-label">Camera on</span></button>
+      <span class="control-divider"></span>
+      <button class="control" id="shareButton" aria-label="Share screen" aria-pressed="false" disabled><span class="control-icon" data-icon="screen"></span><span class="control-label">Share screen</span></button>
+      <button class="control" id="soundButton" aria-label="Enable participant audio" hidden><span class="control-icon" data-icon="audio"></span><span class="control-label">Enable audio</span></button>
+    </div>
+    <button class="leave-button" id="leaveButton"><span data-icon="phone"></span><span>Leave call</span></button>
+  </footer>
+  <div id="toasts" class="toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+  <noscript><div class="noscript">Enable JavaScript to join the live video call.</div></noscript>
+</body>
+</html>

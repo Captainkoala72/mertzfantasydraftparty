@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mertzfantasydraftparty
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0
+      - key: MAX_PARTICIPANTS
+        value: "24"
